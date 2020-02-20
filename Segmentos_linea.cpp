@@ -141,66 +141,18 @@ Generación puntos aleatorios segun profesor Leonardo
 
   for( unsigned long i = 0; i < n; ++i )
   {
-    double x = dist( mt );
-    double y = dist( mt );
-    points.push_back( Point_2( x, y ) );
+    double x1 = dist( mt );
+    double y1 = dist( mt );
+    double x2 = dist( mt );
+    double y2 = dist( mt );
+    Segments.push_back( Segment_2(Point_2( x1, y1 ) ,Point_2( x2, y2 ) )	
+    //Segments.push_back( Point_2( x1, y1 ),Point_2( x2, y2 ) );
   } // end for
 	
 	
-/*Crear vector de Segmentos de linea p-q*/
-	for (int p=0; p<points.size();p++)
-	{
-		for (int q=0; q<points.size();q++)
-		{
-			if (p!=q){
-				bool valid=true;
-			for (int r=0;r<points.size();r++)
-				if(r!=p and r!=q){
-				 valid &= IsPointAtRight( points[p], points[q], points[r] );
-					
-				}
-
-/*Genera vector de segmentos de linea*/       
-			if (valid==true){
-			//resulting_segments.push_back( Segment_2(points[p] ,points[q]) )	;
-      results.push_back(points[p]);
-      results.push_back(points[q]);
-     // results2.push_back(points[q]);
-				}
-			}
-		}
-	}
-
 //for(int i=0; i<results.size(); i++)std::cout<<"("<<results[i]<<  "),("<< results2[i]<<")"<<std::endl;//output
 std::cout<<"***Naive Algorithm***"<<std::endl;
 
-//crea un set para dejar sin repeticiones los puntos del convex hull
-std::set <Point_2> result_set(results.begin(), results.end());
-results.assign(result_set.begin(),result_set.end());
-
- //CGAL::hilbert_sort (results.begin(),results.end());
-  //CGAL::spatial_sort(results.begin(),results.end());
-  sort(results.begin(),results.end());
-
-
-Print_Vector(results);
-area1=GreenArea(results);
-std::cout<<"======="<<std::endl;
-std::cout<<"GREEN Area Naive algorithm:"<<area1<<std::endl;
-//sort(results.begin(),results.end());
-std::cout<<"******"<<std::endl;
- 
-//Organiza vectores según la coordenada X  https://tuket.github.io/2017-09-30-sorting-multiple-vectors-in-the-same-way-using-c-variadic-templates/
-//sortVectors(results, std::less<Point_2>(), results, results2);
-
-std::cout<<"***CGAL Yarvis Algorithm***"<<std::endl;
-CGAL::convex_hull_2( points.begin(), points.end(), std::back_inserter(results3) );
-
-//for(int i=0; i<results.size(); i++)std::cout<<results[i]<<  ", "<< results2[i]<<std::endl;//output
-Print_Vector(results3);
-area2=GreenArea(results3);
-std::cout<<"======="<<std::endl;
-std::cout<<"GREEN Area Yarvis algorithm:"<<area2<<std::endl;
 
 return 0;
 }
