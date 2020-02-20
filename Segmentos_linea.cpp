@@ -157,8 +157,8 @@ Generación puntos aleatorios segun profesor Leonardo
 std::cout<<"***Segmentos de Linea***"<<std::endl;
 Print_Vector(resulting_segments);
 
-sort(resulting_segments.begin(),resulting_segments.end());
-Print_Vector(resulting_segments);
+//sort(resulting_segments.begin(),resulting_segments.end());
+//Print_Vector(resulting_segments);
 
 return 0;
 }
