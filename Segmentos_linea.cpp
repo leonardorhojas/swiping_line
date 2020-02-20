@@ -153,11 +153,12 @@ Generación puntos aleatorios segun profesor Leonardo
 	resulting_segments.push_back( Segment_2(Point_2( 7.5,  0.5 ),Point_2(-7.5, 4  )));
 	resulting_segments.push_back( Segment_2(Point_2( 3 ,  -3.5 ),Point_2(3.3, -6.4)));
 	resulting_segments.push_back( Segment_2(Point_2( -4,  -5 )  ,Point_2(1.5, 1   )));
-
-	
 //for(int i=0; i<results.size(); i++)std::cout<<"("<<results[i]<<  "),("<< results2[i]<<")"<<std::endl;//output
 std::cout<<"***Segmentos de Linea***"<<std::endl;
 Print_Vector(resulting_segments);
+
+sort(resulting_segments);
+Print_Vector(resulting_segments.begin(),resulting_segments.end());
 
 return 0;
 }
