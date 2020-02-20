@@ -145,7 +145,7 @@ Generación puntos aleatorios segun profesor Leonardo
     double y1 = dist( mt );
     double x2 = dist( mt );
     double y2 = dist( mt );
-    Segments.push_back( Segment_2(Point_2( x1, y1 ) ,Point_2( x2, y2 ) ));	
+    resulting_segments.push_back( Segment_2(Point_2( x1, y1 ) ,Point_2( x2, y2 ) ));	
     //Segments.push_back( Point_2( x1, y1 ),Point_2( x2, y2 ) );
   } // end for
 	
