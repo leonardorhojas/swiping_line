@@ -139,7 +139,7 @@ Generación puntos aleatorios segun profesor Leonardo
   std::mt19937 mt( rd( ) );
   std::uniform_real_distribution< double > dist( -10, 10 );
 
-  for( unsigned long i = 0; i < n; ++i )
+ /* for( unsigned long i = 0; i < n; ++i )
   {
     double x1 = dist( mt );
     double y1 = dist( mt );
@@ -148,11 +148,17 @@ Generación puntos aleatorios segun profesor Leonardo
     resulting_segments.push_back( Segment_2(Point_2( x1, y1 ) ,Point_2( x2, y2 ) ));	
     //Segments.push_back( Point_2( x1, y1 ),Point_2( x2, y2 ) );
   } // end for
-	
-	
+  */
+	resulting_segments.push_back( Segment_2(Point_2( -0.5, 5.2 ),Point_2(1.5, 5.5 )));
+	resulting_segments.push_back( Segment_2(Point_2( 7.5,  0.5 ),Point_2(-7.5, 4  )));
+	resulting_segments.push_back( Segment_2(Point_2( 3 ,  -3.5 ),Point_2(3.3, -6.4)));
+	resulting_segments.push_back( Segment_2(Point_2( -4,  -5 )  ,Point_2(1.5, 1   )));
 //for(int i=0; i<results.size(); i++)std::cout<<"("<<results[i]<<  "),("<< results2[i]<<")"<<std::endl;//output
 std::cout<<"***Segmentos de Linea***"<<std::endl;
 Print_Vector(resulting_segments);
+
+//sort(resulting_segments.begin(),resulting_segments.end());
+//Print_Vector(resulting_segments);
 
 return 0;
 }
