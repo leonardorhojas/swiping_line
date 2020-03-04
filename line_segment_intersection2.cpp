@@ -307,7 +307,7 @@ double rnd_point(){
 int main( int argc, char* argv[] )
 {
 	unsigned int n = 10;
-	Points points,
+	Points points;
 	for( unsigned int i = 0; i < n; ++i )
 	{
 	points.push_back(rnd_point(),rnd_point());
@@ -316,6 +316,7 @@ int main( int argc, char* argv[] )
 	Event pe;
 	Points result;
 	priority_queue<Event,vector<Event>, CompareEvent > pq,test;
+
 	for( unsigned int i = 0; i < n; ++i )
 	{
 		double x1 = points.x();
