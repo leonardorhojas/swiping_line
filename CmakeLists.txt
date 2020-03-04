@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.0)
+
+project(ConvexHull)
+
+find_package(CGAL REQUIRED)
+include(${CGAL_USE_FILE})
+
+add_executable(ConvexHullTest test.cxx)
+
+
+## eof - CMakeLists.txt
