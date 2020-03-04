@@ -285,11 +285,11 @@ public:
 	}
 };
 
-public:
+/* public:
 Populate_tree(){
 
 
-}
+} */
 
 double rnd_point(){
 	unsigned int n = 10;
