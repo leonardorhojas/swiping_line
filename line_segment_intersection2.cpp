@@ -308,7 +308,7 @@ int main( int argc, char* argv[] )
 {
 	unsigned int n = 10;
 	Points points,
- 	for (unsigned int i=0; i<n;i++)
+ 	for (unsigned int i = 0; i < n; i++)
 	{
 	points.push_back(rnd_point(),rnd_point());
 	} 
