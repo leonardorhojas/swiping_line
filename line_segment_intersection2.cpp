@@ -332,21 +332,21 @@ int main( int argc, char* argv[] )
 
 		if(y1==y2){
 			if(x1>x2){
-				pq.push(Event(Segment_2(Point_2(x1,y1), Point_2(x2,y2)),0));
-				pq.push(Event(Segment_2(Point_2(x1,y1), Point_2(x2,y2)),1));
+				pq.push(Event(Segment_2(TPoint(x1,y1), TPoint(x2,y2)),0));
+				pq.push(Event(Segment_2(TPoint(x1,y1), TPoint(x2,y2)),1));
 
 			} else{
-				pq.push(Event(Segment_2(Point_2(x2,y2), Point_2(x1,y1)),0));
-				pq.push(Event(Segment_2(Point_2(x2,y2), Point_2(x1,y1)),1));
+				pq.push(Event(Segment_2(TPoint(x2,y2), TPoint(x1,y1)),0));
+				pq.push(Event(Segment_2(TPoint(x2,y2), TPoint(x1,y1)),1));
 			}
 		}else{
 			if(y1>y2){
-				pq.push(Event(Segment_2(Point_2(x1,y1), Point_2(x2,y2)),0));
-				pq.push(Event(Segment_2(Point_2(x1,y1), Point_2(x2,y2)),1));
+				pq.push(Event(Segment_2(TPoint(x1,y1), TPoint(x2,y2)),0));
+				pq.push(Event(Segment_2(TPoint(x1,y1), TPoint(x2,y2)),1));
 
 			} else{
-				pq.push(Event(Segment_2(Point_2(x2,y2), Point_2(x1,y1)),0));
-				pq.push(Event(Segment_2(Point_2(x2,y2), Point_2(x1,y1)),1));
+				pq.push(Event(Segment_2(TPoint(x2,y2), TPoint(x1,y1)),0));
+				pq.push(Event(Segment_2(TPoint(x2,y2), TPoint(x1,y1)),1));
 			}
 		}
 		if(i==1)
