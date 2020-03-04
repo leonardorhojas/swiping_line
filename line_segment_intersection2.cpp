@@ -356,15 +356,11 @@ int main( int argc, char* argv[] )
 	std::cout << "BF          : " << points.size( ) << std::endl << "\t-> ";
  	std::copy(
     points.begin( ), points.end( ),
-    std::ostream_iterator< Points >( std::cout, " | " )
+    std::ostream_iterator< Point_2 >( std::cout, " | " )
     );
   	std::cout << std::endl;
 
-  	std::copy(
-    bf_ch.begin( ), bf_ch.end( ),
-    std::ostream_iterator< Point_2 >( std::cout, " | " )
-    );
-
+  	
 	return 0;
 
 	// BST t;
