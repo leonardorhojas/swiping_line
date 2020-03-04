@@ -306,8 +306,8 @@ double rnd_point(){
 
 int main( int argc, char* argv[] )
 {
-
- 	for (int i=0; i<10;i++)
+	unsigned int n = 10;
+ 	for (int i=0; i<n;i++)
 	{
 	Points.push_back(rnd_point());
 	} 
