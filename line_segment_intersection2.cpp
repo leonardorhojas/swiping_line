@@ -12,8 +12,8 @@
 using namespace std;
 
 typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
-typedef K::Point_2 Point_2;
-typedef std::vector< Point_2 > Points;
+typedef K::Point_2 TPoint;
+typedef std::vector< TPoint > Points;
 typedef K::Segment_2 Segment_2;
 typedef K::Intersect_2 Intersect_2;
 typedef std::vector<Segment_2> Segments;
@@ -356,7 +356,7 @@ int main( int argc, char* argv[] )
 	std::cout << "BF          : " << points.size( ) << std::endl << "\t-> ";
  	std::copy(
     points.begin( ), points.end( ),
-    std::ostream_iterator< Points >( std::cout, " | " )
+    std::ostream_iterator< TPoint >( std::cout, " | " )
     );
   	std::cout << std::endl;
 
