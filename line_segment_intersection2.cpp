@@ -320,11 +320,11 @@ int main( int argc, char* argv[] )
 
 	for( unsigned int i = 0; i < n; ++i )
 	{
-		double x1 = points.x();
-		double y1 = points.y();
+		double x1 = points[i].x();
+		double y1 = points[i].y();
 		i++;
-		double x2 = points.x();
-		double y2 = points.y();
+		double x2 = points[i].x();
+		double y2 = points[i].y();
 
 		if(y1==y2){
 			if(x1>x2){
