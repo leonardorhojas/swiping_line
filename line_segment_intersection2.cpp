@@ -307,9 +307,10 @@ double rnd_point(){
 int main( int argc, char* argv[] )
 {
 	unsigned int n = 10;
+	Points points,
  	for (int i=0; i<n;i++)
 	{
-	Points.push_back(rnd_point(),rnd_point());
+	points.push_back(rnd_point(),rnd_point());
 	} 
 
 	Event pe;
@@ -317,11 +318,11 @@ int main( int argc, char* argv[] )
 	priority_queue<Event,vector<Event>, CompareEvent > pq,test;
 	for( unsigned int i = 0; i < n; ++i )
 	{
-		double x1 = Points.x();
-		double y1 = Points.y();
+		double x1 = points.x();
+		double y1 = points.y();
 		i++;
-		double x2 = Points.x();
-		double y2 = Points.y();
+		double x2 = points.x();
+		double y2 = points.y();
 
 		if(y1==y2){
 			if(x1>x2){
