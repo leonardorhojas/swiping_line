@@ -7,6 +7,8 @@
 #include <typeinfo>
 #include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
 
+// -------------------------------------------------------------------------
+
 using namespace std;
 
 typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
@@ -16,6 +18,7 @@ typedef K::Segment_2 Segment_2;
 typedef K::Intersect_2 Intersect_2;
 typedef std::vector<Segment_2> Segments;
 
+// -------------------------------------------------------------------------
 
 struct Event{
 	Segment_2 s;
@@ -350,12 +353,19 @@ int main( int argc, char* argv[] )
 			pe = pq.top();
 	}
 
-
+	std::cout << "BF          : " << points.size( ) << std::endl << "\t-> ";
  	std::copy(
     points.begin( ), points.end( ),
     std::ostream_iterator< Points >( std::cout, " | " )
     );
   	std::cout << std::endl;
+
+  	std::copy(
+    bf_ch.begin( ), bf_ch.end( ),
+    std::ostream_iterator< Point_2 >( std::cout, " | " )
+    );
+
+	return 0;
 
 	// BST t;
 	// cout << "BACK : "<<pe.s.point(0)<<"  "<<pe.s.point(1)<<endl;
