@@ -12,7 +12,9 @@ using namespace std;
 typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
 typedef K::Point_2 Point_2;
 typedef K::Segment_2 Segment_2;
-typedef vector<Point_2> Points;
+typedef vector<Point_2> OriPoints;
+typedef std::vector< OriPoints > Points;
+
 typedef K::Intersect_2 Intersect_2;
 typedef std::vector<Segment_2> Segments;
 
