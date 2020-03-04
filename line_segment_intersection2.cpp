@@ -352,7 +352,7 @@ int main( int argc, char* argv[] )
 
  	std::copy(
     points.begin( ), points.end( ),
-    std::ostream_iterator< points >( std::cout, " | " )
+    std::ostream_iterator< Points >( std::cout, " | " )
     );
   	std::cout << std::endl;
 
