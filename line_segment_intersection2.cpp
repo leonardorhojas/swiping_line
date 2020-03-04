@@ -292,9 +292,9 @@ Populate_tree(){
 } */
 
 double rnd_point(){
-	unsigned int n = 10;
-	if( argc > 1 )
-		n = std::atoi( argv[ 1 ] );
+	// unsigned int n = 10;
+	// if( argc > 1 )
+	// 	n = std::atoi( argv[ 1 ] );
 	std::random_device rd;
 	std::mt19937 mt( rd( ) );
 	std::uniform_real_distribution< double > dist( -10, 10 );
@@ -307,7 +307,7 @@ double rnd_point(){
 int main( int argc, char* argv[] )
 {
 
- 	for (int 1=0; i<10;i++)
+ 	for (int 1=0; i<argc;i++)
 	{
 	Points.push_back(rnd_point());
 	} 
