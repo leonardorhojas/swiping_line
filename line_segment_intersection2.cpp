@@ -360,10 +360,7 @@ int main( int argc, char* argv[] )
     );
   	std::cout << std::endl;
 
-  	std::copy(
-    bf_ch.begin( ), bf_ch.end( ),
-    std::ostream_iterator< Point_2 >( std::cout, " | " )
-    );
+  
 
 	return 0;
 
