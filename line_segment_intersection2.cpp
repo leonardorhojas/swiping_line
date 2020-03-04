@@ -309,7 +309,7 @@ int main( int argc, char* argv[] )
 	unsigned int n = 10;
  	for (int i=0; i<n;i++)
 	{
-	Points.push_back(rnd_point());
+	Points.push_back(rnd_point(),rnd_point());
 	} 
 
 	Event pe;
