@@ -310,7 +310,9 @@ int main( int argc, char* argv[] )
 	Points points;
 	for( unsigned int i = 0; i < n; ++i )
 	{
-	points.push_back(rnd_point(),rnd_point());
+	double x=rnd_point();
+	double y=rnd_point()
+	points.push_back(x,y);
 	} 
 
 	Event pe;
