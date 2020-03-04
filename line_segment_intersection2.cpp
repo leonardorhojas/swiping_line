@@ -350,7 +350,7 @@ int main( int argc, char* argv[] )
 
  	std::copy(
     cgal_ch.begin( ), cgal_ch.end( ),
-    std::ostream_iterator< Points >( std::cout, " | " )
+    std::ostream_iterator< points >( std::cout, " | " )
     );
   	std::cout << std::endl;
 
