@@ -353,7 +353,7 @@ int main( int argc, char* argv[] )
 			pe = pq.top();
 	}
 
-	std::cout << "BF          : " << points.size( ) << std::endl << "\t-> ";
+	std::cout << "Tamaño del arreglo  : " << points.size( ) << std::endl << "\t-> ";
  	std::copy(
     points.begin( ), points.end( ),
     std::ostream_iterator< Point_2 >( std::cout, " | " )
