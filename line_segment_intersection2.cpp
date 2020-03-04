@@ -13,6 +13,8 @@ typedef K::Point_2 Point_2;
 typedef K::Segment_2 Segment_2;
 typedef vector<Point_2> Points;
 typedef K::Intersect_2 Intersect_2;
+typedef std::vector<Segment_2> Segments;
+
 
 struct Event{
 	Segment_2 s;
@@ -283,24 +285,43 @@ public:
 	}
 };
 
-int main( int argc, char* argv[] )
-{
+public:
+Populate_tree(){
+
+
+}
+
+double rnd_point(){
 	unsigned int n = 10;
 	if( argc > 1 )
 		n = std::atoi( argv[ 1 ] );
 	std::random_device rd;
 	std::mt19937 mt( rd( ) );
-	std::uniform_real_distribution< double > dist( -100, 100 );
+	std::uniform_real_distribution< double > dist( -10, 10 );
+	double point=dist( mt );
+	return point;
+
+}
+
+
+int main( int argc, char* argv[] )
+{
+
+ 	for (int 1=0; i<10;i++)
+	{
+	Points.push_back(rnd_point());
+	} 
 
 	Event pe;
 	Points result;
 	priority_queue<Event,vector<Event>, CompareEvent > pq,test;
 	for( unsigned int i = 0; i < n; ++i )
 	{
-		double x1 = dist( mt );
-		double y1 = dist( mt );
-		double x2 = dist( mt );
-		double y2 = dist( mt );
+		double x1 = Points.x();
+		double y1 = Points.y();
+		i++;
+		double x2 = Points.x();
+		double y2 = Points.y();
 
 		if(y1==y2){
 			if(x1>x2){
@@ -324,29 +345,39 @@ int main( int argc, char* argv[] )
 		if(i==1)
 			pe = pq.top();
 	}
-	BST t;
-	cout << "BACK : "<<pe.s.point(0)<<"  "<<pe.s.point(1)<<endl;
 
-	test = pq;
-	for(int i =0;i<pq.size();i++){
-		cout<<test.top().s<<endl;
-		test.pop();
-	}
+
+ 	std::copy(
+    cgal_ch.begin( ), cgal_ch.end( ),
+    std::ostream_iterator< Points >( std::cout, " | " )
+    );
+  	std::cout << std::endl;
+
+	// BST t;
+	// cout << "BACK : "<<pe.s.point(0)<<"  "<<pe.s.point(1)<<endl;
+
+	// test = pq;
+	// for(int i =0;i<pq.size();i++){
+	// 	cout<<test.top().s<<endl;
+	// 	test.pop();
+	// }
 	
-	while (!pq.empty()) { 
-		Event e = pq.top(); 
-		pq.pop();
-		//t.display();
-		cout <<"P : "<< e.s.point(0) <<"  "<< e.s.point(1) << "  "<<e.type <<endl;
-		if(e.type==0)
-			t.insert(Segment_2(e.s.point(0),e.s.point(1)));
-		}
+	// while (!pq.empty()) { 
+	// 	Event e = pq.top(); 
+	// 	pq.pop();
+	// 	//t.display();
+	// 	cout <<"P : "<< e.s.point(0) <<"  "<< e.s.point(1) << "  "<<e.type <<endl;
+	// 	if(e.type==0)
+	// 		t.insert(Segment_2(e.s.point(0),e.s.point(1)));
+	
+	// }
 
-	node* a =t.search(Segment_2(pe.s.point(0),pe.s.point(1)));
-	cout <<"SEARCH : "<< a->data.point(0) << "  "<< a->data.point(1) << endl; 
-	t.display();
-	t.remove(Segment_2(a->data.point(0),a->data.point(1)));
-	t.display();
+	// node* a =t.search(Segment_2(pe.s.point(0),pe.s.point(1)));
+	// cout <<"SEARCH : "<< a->data.point(0) << "  "<< a->data.point(1) << endl; 
+	// t.display();
+	// t.remove(Segment_2(a->data.point(0),a->data.point(1)));
+	// t.display();
+
 		// RESULT
 	/*cout << "============  INSERTSECTION POINTS =================" << endl;
 	auto start = chrono::steady_clock::now( );
